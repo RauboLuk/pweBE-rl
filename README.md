@@ -46,5 +46,5 @@ export default {
 yarn
 
 # start server
-yarn start
+yarn dev
 ```
