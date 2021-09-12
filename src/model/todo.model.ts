@@ -15,6 +15,7 @@ const TodoSchema = new mongoose.Schema<TodoDocument>(
     isDone: {
       type: Boolean,
       required: [true, "isDone is required"],
+      default: false,
     },
   },
   {
