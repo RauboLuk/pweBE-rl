@@ -5,6 +5,7 @@ import {
   getTodosHandler,
   updateTodoHandler,
 } from "./controller/todo.controller";
+import { errorHandler, unknownEndpoint } from "./utils/middleware";
 
 export default function (app: Express): void {
   app.get("/healthcheck", (req: Request, res: Response) => res.sendStatus(200));
@@ -20,4 +21,7 @@ export default function (app: Express): void {
 
   // Remove todo
   app.delete("/api/todos/:id", deleteTodoHandler);
+
+  app.use(unknownEndpoint);
+  app.use(errorHandler);
 }

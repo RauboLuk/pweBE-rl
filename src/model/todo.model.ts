@@ -5,7 +5,7 @@ export interface TodoDocument extends mongoose.Document {
   isDone: boolean;
 }
 
-const TodoSchema = new mongoose.Schema(
+const TodoSchema = new mongoose.Schema<TodoDocument>(
   {
     text: {
       type: String,
@@ -23,7 +23,7 @@ const TodoSchema = new mongoose.Schema(
 );
 
 TodoSchema.set("toJSON", {
-  transform: (_, returnedObject) => {
+  transform: (_: TodoDocument, returnedObject: TodoDocument) => {
     returnedObject.id = returnedObject._id.toString();
     delete returnedObject._id;
     delete returnedObject.__v;
