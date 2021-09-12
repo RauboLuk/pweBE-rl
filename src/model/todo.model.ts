@@ -10,7 +10,7 @@ const TodoSchema = new mongoose.Schema(
     text: {
       type: String,
       required: [true, "Text is required"],
-      minlength: [1, "Text length have to be at least 1"]
+      minlength: [1, "Text length have to be at least 1"],
     },
     isDone: {
       type: Boolean,
@@ -23,7 +23,7 @@ const TodoSchema = new mongoose.Schema(
 );
 
 TodoSchema.set("toJSON", {
-  transform: (document, returnedObject) => {
+  transform: (_, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();
     delete returnedObject._id;
     delete returnedObject.__v;

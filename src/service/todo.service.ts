@@ -16,3 +16,7 @@ export function findTodo(id: string) {
 export function updateTodo(id: string, body: DocumentDefinition<TodoDocument>) {
   return Todo.findByIdAndUpdate(id, body, { new: true, runValidators: true });
 }
+
+export function deleteTodo(id: string) {
+  return Todo.findByIdAndDelete(id);
+}
