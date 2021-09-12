@@ -17,7 +17,7 @@ export default function (app: Express): void {
   app.post("/api/todos", createTodoHandler);
 
   // Update todo
-  app.post("/api/todos/:id", updateTodoHandler);
+  app.put("/api/todos/:id", updateTodoHandler);
 
   // Remove todo
   app.delete("/api/todos/:id", deleteTodoHandler);
