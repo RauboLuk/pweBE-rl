@@ -10,6 +10,7 @@ const TodoSchema = new mongoose.Schema(
     text: {
       type: String,
       required: [true, "Text is required"],
+      minlength: [1, "Text length have to be at least 1"]
     },
     isDone: {
       type: Boolean,

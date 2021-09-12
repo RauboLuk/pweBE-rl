@@ -2,6 +2,7 @@ import { Express, Request, Response } from "express";
 import {
   createTodoHandler,
   getTodosHandler,
+  updateTodoHandler,
 } from "./controller/todo.controller";
 
 export default function (app: Express): void {
@@ -13,7 +14,9 @@ export default function (app: Express): void {
   // Create new todo
   app.post("/api/todos", createTodoHandler);
 
-  // TODO
   // Update todo
+  app.post("/api/todos/:id", updateTodoHandler);
+  
+  // TODO
   // Remove todo
 }
