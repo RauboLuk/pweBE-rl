@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 
 export interface TodoDocument extends mongoose.Document {
-  msg: string;
+  text: string;
   isDone: boolean;
 }
 
 const TodoSchema = new mongoose.Schema(
   {
-    msg: { type: String, required: true },
+    text: { type: String, required: true },
     isDone: { type: Boolean, required: true },
   },
   {
