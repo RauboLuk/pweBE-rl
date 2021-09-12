@@ -1,5 +1,8 @@
 import { Express, Request, Response } from "express";
-import { getTodosHandler } from "./controller/todo.controller";
+import {
+  createTodoHandler,
+  getTodosHandler,
+} from "./controller/todo.controller";
 
 export default function (app: Express): void {
   app.get("/healthcheck", (req: Request, res: Response) => res.sendStatus(200));
@@ -7,8 +10,10 @@ export default function (app: Express): void {
   // GET all todos
   app.get("/api/todos", getTodosHandler);
 
-  // TODO
   // Create new todo
+  app.post("/api/todos", createTodoHandler);
+
+  // TODO
   // Update todo
   // Remove todo
 }
